@@ -1,0 +1,22 @@
+{
+  "name": "code-format",
+  "version": "1.0.0",
+  "description": "测试代码校验格式化",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yb81312043/code-format.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yb81312043/code-format/issues"
+  },
+  "homepage": "https://github.com/yb81312043/code-format#readme",
+  "dependencies": {
+    "eslint": "^7.9.0"
+  }
+}
