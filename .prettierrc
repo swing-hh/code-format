@@ -5,5 +5,7 @@
   "trailingComma": "none",
   "arrowParens": "avoid",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "vetur.format.defaultFormatter.js": "vscode-typescript"
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "printWidth": 140,
+  "useTabs": false
 }

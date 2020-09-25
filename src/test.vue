@@ -1,9 +1,7 @@
 <template>
   <div>
     <el-breadcrumb separator="/" class="custom-breadcrumb">
-      <el-breadcrumb-item :to="{ path: '/packagelist' }"
-        >批次列表</el-breadcrumb-item
-      >
+      <el-breadcrumb-item :to="{ path: '/packagelist' }">批次列表</el-breadcrumb-item>
       <el-breadcrumb-item
         :to="{
           path: '/assesslist',
@@ -21,72 +19,38 @@
       <div class="page-title">
         <span>评估详情</span>
       </div>
+
       <div class="page-show" v-loading="loadingFlag">
         <div class="assess-con-body" v-if="Object.keys(assessDetail).length">
           <!-- 评估试题 -->
           <div v-if="assessDetail.type == 'tid'" class="cont-left">
             <div class="left-title">题目：</div>
-            <div
-              class="task-item-question"
-              :style="assessDetail.question === '' ? 'height:50px' : ''"
-              v-html="assessDetail.question"
-            ></div>
+            <div class="task-item-question" :style="assessDetail.question === '' ? 'height:50px' : ''" v-html="assessDetail.question"></div>
             <div class="left-title">解答：</div>
-            <div
-              class="task-item-question"
-              :style="assessDetail.answer === '' ? 'height:50px' : ''"
-              v-html="assessDetail.answer"
-            ></div>
+            <div class="task-item-question" :style="assessDetail.answer === '' ? 'height:50px' : ''" v-html="assessDetail.answer"></div>
           </div>
+
           <!-- 评估试卷 -->
-          <div
-            v-if="assessDetail.type === 'exam' && assessDetail.examInfo"
-            class="cont-left"
-          >
+          <div v-if="assessDetail.type === 'exam' && assessDetail.examInfo" class="cont-left">
             <p class="">{{ assessDetail.examInfo.title }}</p>
             <section>
               <p class="paper-title">
                 {{ assessDetail.examInfo.content[0].item }}
               </p>
-              <ul
-                style="
-                  height: 400px;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  overflow: auto;
-                "
-              >
-                <li
-                  class=""
-                  v-for="(item, index) in assessDetail.examInfo.content[0]
-                    .itemDetail"
-                  :key="index"
-                >
+              <ul style="height: 400px; padding: 10px; border: 1px solid #ccc; overflow: auto">
+                <li class="" v-for="(item, index) in assessDetail.examInfo.content[0].itemDetail" :key="index">
                   <div class="left-title">题目：</div>
-                  <div
-                    class="task-item-question"
-                    :style="item.question === '' ? 'height:50px' : ''"
-                    v-html="item.question"
-                  ></div>
+                  <div class="task-item-question" :style="item.question === '' ? 'height:50px' : ''" v-html="item.question"></div>
                   <div class="left-title">解答：</div>
-                  <div
-                    class="task-item-question"
-                    :style="item.answer === '' ? 'height:50px' : ''"
-                    v-html="item.answer"
-                  ></div>
+                  <div class="task-item-question" :style="item.answer === '' ? 'height:50px' : ''" v-html="item.answer"></div>
                 </li>
               </ul>
             </section>
           </div>
+
           <div class="cont-right">
-            <div class="right-title">
-              {{ assessDetail.assessCriteria.title }}：
-            </div>
-            <div
-              class="right-group"
-              v-for="(key, index) in assessDetail.assessCriteria.assessList"
-              :key="index"
-            >
+            <div class="right-title">{{ assessDetail.assessCriteria.title }}：</div>
+            <div class="right-group" v-for="(key, index) in assessDetail.assessCriteria.assessList" :key="index">
               <span class="right-group-title">{{ key.title }}</span>
               <table>
                 <tr v-for="(item, dex) in key.display" :key="dex">
@@ -96,9 +60,7 @@
               </table>
 
               <div class="score">
-                <div class="scoretitle">
-                  <span class="redstar">*</span>评分：
-                </div>
+                <div class="scoretitle"><span class="redstar">*</span>评分：</div>
                 <ul>
                   <li v-for="(item, inde) in key.score.list" :key="inde">
                     <span
@@ -117,9 +79,7 @@
             </div>
             <div class="note-group">
               <div class="notebox">
-                <div class="note-title left">
-                  {{ assessDetail.note.title }}：
-                </div>
+                <div class="note-title left">{{ assessDetail.note.title }}：</div>
                 <el-input
                   ref="textarea"
                   class="notebody left"
@@ -132,41 +92,20 @@
                   >111</el-input
                 >
               </div>
-              <el-button
-                v-if="isSubmit"
-                size="small"
-                type="primary"
-                @click="saveAssess"
-                >{{ assessTYPE }}</el-button
-              >
-              <el-button
-                v-if="!isSubmit"
-                size="small"
-                type="primary"
-                @click="fixAssess"
-                >修改</el-button
-              >
+              <el-button v-if="isSubmit" size="small" type="primary" @click="saveAssess">{{ assessTYPE }}</el-button>
+              <el-button v-if="!isSubmit" size="small" type="primary" @click="fixAssess">修改</el-button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- 弹框组件 -->
-    <el-dialog
-      id="dialog-yzj-log"
-      title="温馨提示"
-      :visible.sync="dialogVisible"
-      width="30%"
-    >
+    <el-dialog id="dialog-yzj-log" title="温馨提示" :visible.sync="dialogVisible" width="30%">
       <span style="word-break: break-all">{{ dialogContent }}</span>
       <div slot="footer" class="dialog-footer">
         <div>
-          <el-button size="small" type="primary" @click="dialogVisible = false"
-            >取消</el-button
-          >
-          <el-button size="small" type="primary" @click="handledialog"
-            >确认</el-button
-          >
+          <el-button size="small" type="primary" @click="dialogVisible = false">取消</el-button>
+          <el-button size="small" type="primary" @click="handledialog">确认</el-button>
         </div>
       </div>
     </el-dialog>
@@ -208,11 +147,8 @@ export default class PackageList extends Vue {
       .assessdetail({ data: { id: Id } })
       .then((res: any) => {
         this.assessDetail = res
-        this.assessText = !this.assessDetail.note.value
-          ? ''
-          : this.assessDetail.note.value
-        this.assessTYPE =
-          this.assessDetail.button.value === '提交' ? '提交' : '保存'
+        this.assessText = !this.assessDetail.note.value ? '' : this.assessDetail.note.value
+        this.assessTYPE = this.assessDetail.button.value === '提交' ? '提交' : '保存'
         this.isSubmit = this.assessDetail.button.value === '提交' ? true : false
         this.loadingFlag = false
         this.translateData()
@@ -221,9 +157,10 @@ export default class PackageList extends Vue {
         this.loadingFlag = false
       })
   }
+
   // 数据加载后对latex进行渲染
   translateData() {
-    this.$nextTick(() => {
+    this.$nextTick(res => {
       let win: any = window
       win.MathJax.Hub.Queue(['Typeset', win.MathJax.Hub, this.$el])
     })

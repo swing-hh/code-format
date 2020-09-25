@@ -46,4 +46,26 @@
 
 # 自动化保存>
 1. vscode>首选项>设置>文本编辑器>正在格式化>Format On Save勾选 （一些格式化都是基于这个）
-2. 编辑器自动格式化首先读取.prettierrc文件的配置，http://www.mamicode.com/info-detail-3027882.html  （.prettierrc文件内写注释可能导致不好用）只是一些比较基础的配置
+2. 编辑器自动格式化首先读取.prettierrc文件的配置，http://www.mamicode.com/info-detail-3027882.html  （.prettierrc文件内写注释可能导致不好用）只是一些比较基础的配置。
+
+## .prettierrc
+{
+  // tab缩进大小,默认为2
+  "tabWidth": 2,
+  // 使用分号, 默认true
+  "semi": false,
+  // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
+  "singleQuote": true,
+  // 对象、数组最后一个是否包含尾随逗号
+  "trailingComma": "none",
+  // always 总是有括号 avoid 箭头函数一个参数
+  "arrowParens": "avoid",
+  // 方法括号之间插入空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // 让vue中的js按编辑器自带的ts格式进行格式化
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 换行长度
+  "printWidth": 140,
+  // 用tab缩紧，而不是用空格
+  "useTabs": false
+}
