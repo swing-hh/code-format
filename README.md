@@ -44,6 +44,6 @@
 1. 保存当前工作区的配置，应用于不同的项目不同vscode配置
 
 
-
-
-
+# 自动化保存>
+1. vscode>首选项>设置>文本编辑器>正在格式化>Format On Save勾选 （一些格式化都是基于这个）
+2. 编辑器自动格式化首先读取.prettierrc文件的配置，http://www.mamicode.com/info-detail-3027882.html  （.prettierrc文件内写注释可能导致不好用）只是一些比较基础的配置
