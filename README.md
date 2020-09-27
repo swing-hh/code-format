@@ -73,3 +73,4 @@
 ## 一些ts、js文件自动化保存，完全依靠lint-staged这种npm插件
 如果需要识别ts文件这种，需要有tsconfig.json配置一些校验的文件路径
 需要在.eslintrc.js配置解析ts的解析器
+.json文件可以根据eslint规则校验，但是修改后自动格式化无法成功

@@ -3,6 +3,6 @@ module.exports = {
   age: '11',
   obj: {
     first: 2014,
-    last: 2019
+    last: '2019'
   }
 }

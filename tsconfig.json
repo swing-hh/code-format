@@ -31,7 +31,6 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.js",
-    "src/**/*.json",
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
