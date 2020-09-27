@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix --ext .ts,.vue src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-staged": "lint-staged"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "lint-staged"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yb81312043/code-format.git"
@@ -27,7 +32,14 @@
     "@vue/eslint-config-typescript": "^5.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "typescript": "^4.0.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }

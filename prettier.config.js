@@ -7,5 +7,5 @@
  * @FilePath: /yy-admin/prettier.config.js
  */
 module.exports = {
-
-};
+  name: 1
+}
