@@ -103,3 +103,14 @@
 如果需要识别ts文件这种，需要有tsconfig.json配置一些校验的文件路径
 需要在.eslintrc.js配置解析ts的解析器
 .json文件可以根据eslint规则校验，但是修改后自动格式化无法成功
+
+## 去除vscode的设置
+* 编辑器设置中Format On Paste和Format On Save配置一定要去掉，保证我们走lint-staged格式化
+
+## 寻找一下网上比较优的方案
+* [腾讯前端规范](https://www.kancloud.cn/digest/code-guide)
+* [前端规范](https://guide.aotu.io/index.html)
+* [w3cschool前端规范](https://www.w3cschool.cn/webdevelopment/)
+
+
+
