@@ -107,10 +107,16 @@
 ## 去除vscode的设置
 * 编辑器设置中Format On Paste和Format On Save配置一定要去掉，保证我们走lint-staged格式化
 
-## 寻找一下网上比较优的方案
+## 代码规范
 * [腾讯前端规范](https://www.kancloud.cn/digest/code-guide)
 * [前端规范](https://guide.aotu.io/index.html)
 * [w3cschool前端规范](https://www.w3cschool.cn/webdevelopment/)
+
+## 网上代码格式化方案
+* https://segmentfault.com/a/1190000015315545
+* https://segmentfault.com/a/1190000020972147
+* https://juejin.im/post/6844904065319731208
+* https://zhuanlan.zhihu.com/p/68026905
 
 
 
