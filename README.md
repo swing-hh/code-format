@@ -32,6 +32,8 @@
   "enable": true
 }
 
+
+
 ### vscode eslint PK npm eslint
 1. [引用网上作出的区分](https://www.h5w3.com/13505.html)
 2. vscode中的eslint是为了你在编辑器中编码不符合eslint规范的时候的提示。npm中的eslint是为了webpack打包的时候，检验代码是否符合eslint规范提示
@@ -42,7 +44,7 @@
 2. 大概意思就是解决风格差异、编辑器差异、设置差异，开放一些必须的设置
 3. [prettier配置选项]（https://blog.csdn.net/guowenf/article/details/107346230）
 4. 读取.prettierrc文件配置，.prettier.config.js配置，package.json中新建prettier属性
-5. eslint-plugin-prettier主要是配合git commit时lint-staged校验使用
+5. eslint-plugin-prettier主要是配合git commit时lint-staged校验标记不一致
 
 ### eslint PK prettier
 * [eslint和prettier](https://www.jianshu.com/p/dd07cca0a48e)
@@ -54,8 +56,8 @@
 ### eslint-plugin-vue
 * [博客](https://www.lagou.com/lgeduarticle/19420.html)
 1. Vue.js官方eslint插件，检查.vue文件中的\<template\> and \<script\>,查找语法，vue指令，vue风格指南错误。
-2. @vue/eslint-config-prettier eslint-plugin-vue插件的拓展
-3. @vue/eslint-config-typescript 集成Vue-TypeScript的基本配置
+2. @vue/eslint-config-prettier eslint-plugin-vue插件的拓展，发生的错误进行自动修复
+3. @vue/eslint-config-typescript 集成Vue-TypeScript的基本配置，自动修复
 4. @vue/cli-plugin-eslint 主要是注入命令vue-cli-service lint。通过.eslintrc或者package.json中eslintConfig字端配置
 
 ### lint-staged eslint-config-standard
