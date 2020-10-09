@@ -120,5 +120,23 @@
 * https://juejin.im/post/6844904065319731208
 * https://zhuanlan.zhihu.com/p/68026905
 
+## 代码格式化和代码质量
+ 代码格式问题通常指的是：单行代码长度、tab长度、空格、逗号表达式等问题。而代码质量问题指的是：未使用变量、三等号、全局变量声明等问题。
+
+## 插件及其作用
+* eslint 识别js/es代码规范和错误检查工具
+* babel-eslint 解析eslint规则
+* eslint-plugin-vue vue官网提供的eslint，继承自动修复
+* @vue/cli-plugin-eslint 主要是注入命令vue-cli-service lint。通过.eslintrc或者package.json中eslintConfig字端配置
+* prettier 解决风格差异、编辑器差异、设置差异，开放一些必须的设置
+* @vue/eslint-config-prettier 关闭eslint与prettier的冲突代码格式化规则
+* eslint-plugin-prettier 可以将prettier的规则设置为eslint的规则，对不符合规则的进行提示。（与eslint-plugin-vue相同）
+* lint-staged 每次修改一次文件就进行一次lint检查
+* @vue/eslint-config-standard vue-cli使用，不是外部使用，是对于eslint-plugin-vue的一些扩展
+* eslint-plugin-standard 可以配置的eslint补充standard规则
+* husky git commit的时候触发钩子函数，校验规则，阻止不合法的commit和push
+* @typescript-eslint/parser 使用eslint规则校验typescript
+* @typescript-eslint/eslint-plugin 为typescript提供lint规则
+
 
 
