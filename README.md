@@ -113,6 +113,7 @@
 * [腾讯前端规范](https://www.kancloud.cn/digest/code-guide)
 * [前端规范](https://guide.aotu.io/index.html)
 * [w3cschool前端规范](https://www.w3cschool.cn/webdevelopment/)
+* [百度EFE](https://github.com/ecomfe/spec)
 
 ## 网上代码格式化方案
 * https://segmentfault.com/a/1190000015315545
